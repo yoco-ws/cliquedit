@@ -38,7 +38,7 @@
 				</div>
 				<div class="fila">
 					<p class="texto-login">
-						Clic-edita para <a class="texto-login" href="Heuristic Mérida 2018">#</a>
+						Clic-edita para <a class="texto-login" href="http://heuristic.center">Heuristic Mérida 2018</a>
 					</p>
 				</div>
 			</div>
