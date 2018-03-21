@@ -6,14 +6,13 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     	<meta http-equiv="x-ua-compatible" content="ie-edge">
-    	<meta name="keywords" content="...">
-    	<meta name="description" content="El equipo">
+    	<meta name="description" content="I am motion graphic designer with a major in digital animation and a manga artist illustrator form the south east of Mexico.">
     	<meta name="author" content="YOCO.MX">
     	
     	<meta property="og:type"          content="website" />
 	  	<meta property="og:title"         content="José Pardo"/>
-	  	<meta property="og:description"   content="..." />
-	  	<meta property="og:image"         content="..." />
+	  	<meta property="og:description"   content="I am motion graphic designer with a majorin digital animation and a manga artist illustrator form the south east of Mexico." />
+	  	<meta property="og:image"         content="https://yoco.ws/cliquedit/img/img-perfil.jpg" />
     	
 	    <!-- Estilos de YOCO --> 
     	<link rel="stylesheet" href="css/perfil.min.css">
@@ -133,7 +132,7 @@
 			<section class="container-fluid perfil fondo-blanco">
 				<div class="row separador">
 					<div class="contenedor-video col-12">
-						<video src="media/Video_Integrador.mp4" controls class="w-100">
+						<video src="https://player.vimeo.com/external/261172760.hd.mp4?s=31e960f258ff2244741dccf21f27657cb46b5545&profile_id=175" controls class="w-100">
 							Tu navegador no soporta este video
 						</video>
 					</div>
