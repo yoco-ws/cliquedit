@@ -51,6 +51,12 @@ class page{
 	private static function removeSubdomainUrl($url) {
 	    //Fuente: https://stackoverflow.com/questions/2679618/get-domain-name-not-subdomain-in-php
 		$url_new = parse_url($url);
+		if(isset($url_new['path'])){
+			if (strcmp($url_new['path'], 'localhost') == 0 ) {
+		   		return $url_new['path'];
+		   	}
+		}
+
 		if(isset($url_new['host'])){
 			if (filter_var($url_new['host'], FILTER_VALIDATE_IP) || strcmp($url_new['host'], 'localhost') == 0 ) {
 		   		return $url_new['host'].':'.$url_new['port'];
