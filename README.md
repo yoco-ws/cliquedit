@@ -16,14 +16,27 @@ cliquedit is free to test in any non-commercial website. To ask for a Developers
 For commercial websites you should go to our website cliqued.it and purchase a Single Website Licence or a Multi Website Licence (recommended for web development, marketing or advertising agencies) in our webstore.
 
 
-### Ventajas
-lkjslkjslkjslkjs lkjs lkjs lksj
+### Benefits
+cliquedit reduces CMS integration time to almost zero.
+cliquedit can be integrated to any HMTL/CSS website whitout any specific design practice.
+cliquedit is highly friendly and intuitive for the final user.
 
-Dependencias (jQuery)
 
-Requerimientos base (Servidor Apache con PHP y módulos de CURL para el webservice)
 
-Instalación (Descarga manual)
+### Dependencies 
+
+(jQuery)
+
+
+
+### Base requirements
+
+(Servidor Apache con PHP y módulos de CURL para el webservice)
+
+
+### Installation 
+
+(Descarga manual)
 
 
 1. Descargar el zip, descomprimirlo y guardarlo en el servidor.
