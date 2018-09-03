@@ -17,19 +17,25 @@ Requerimientos base (Servidor Apache con PHP y módulos de CURL para el webservi
 Instalación (Descarga manual)
 
 
-1. Descargar el zip, descomprimirlo y guardarlo en el servidor. 
-2. Editar archivo de configuración (api_key, home, install_dir, mediaDir 
+1. Descargar el zip, descomprimirlo y guardarlo en el servidor.
+
+2. Editar archivo de configuración (api_key, home, install_dir, mediaDir
+
 3. En cada página o en un archivo global del sitio, importar la librería cliquedit, en la primera línea HMTL 
-<?php require(‘cliquedit/cliquedit.php’); ?> 
+<?php require(‘cliquedit/cliquedit.php’); ?>
+
 4. Obtener una instancia de cliquedit.
 <?php $cliqued = \CE\CliquedIt::getInstance(); ?>
- 5. Obtener las páginas o categorías a cargar. Si no existen, en este paso son creadas.
-<?php 	//Requests pages or categories to load
+
+5. Obtener las páginas o categorías a cargar. Si no existen, en este paso son creadas.
+<?php	//Requests pages or categories to load
 	$cliqued->page()->load([
 		'page' => $config['home'],
 		'category' => 'test,test-2'
 	]);
-?>  6. Especificar a cliquedit cuál es el inicio de la página.
+?>
+
+6. Especificar a cliquedit cuál es el inicio de la página.
 <?php $cliqued->page()->start() ?>
 
 Cómo funciona (Aquitectura, diseño, etc. No lo veo tan necesario para una documentación de implementación pero es un plus)
