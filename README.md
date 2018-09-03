@@ -34,7 +34,7 @@ cliquedit is highly friendly and intuitive for the final user.
 (Servidor Apache con PHP y módulos de CURL para el webservice)
 
 
-### Installation 
+### Setup 
 
 (Descarga manual)
 
@@ -60,16 +60,29 @@ cliquedit is highly friendly and intuitive for the final user.
 6. Especificar a cliquedit cuál es el inicio de la página.
 <?php $cliqued->page()->start() ?>
 
-Cómo funciona (Aquitectura, diseño, etc. No lo veo tan necesario para una documentación de implementación pero es un plus)
+### How it works
 
-Preparación (Como preparar la página para que se pueda empezar a llamar las funciones de CE)
-
-Uso básico (Como volver editables Textos, Imagenes, Anclas, Audios, Videos, Códigos Embebidos )
-
-Uso avanzado ( Parametros adicionales para cada método como el richtext, implementaciones avanzadas como comportamientos diferentes cuando la sesión esta iniciada )
+(Aquitectura, diseño, etc. No lo veo tan necesario para una documentación de implementación pero es un plus)
 
 
-Plataformas soportadas (Todos los navegadores, excepto en la plataforma iOS )
+### Preparación 
+
+(Como preparar la página para que se pueda empezar a llamar las funciones de CE)
 
 
-Uso avanzado ( Colecciones y artículos )
+### Basic use
+
+(Como volver editables Textos, Imagenes, Anclas, Audios, Videos, Códigos Embebidos )
+
+### Advanced use
+
+( Parametros adicionales para cada método como el richtext, implementaciones avanzadas como comportamientos diferentes cuando la sesión esta iniciada )
+
+( Colecciones y artículos )
+
+
+### Plataformas soportadas 
+
+(Todos los navegadores, excepto en la plataforma iOS )
+
+
