@@ -1,14 +1,23 @@
 # cliquedit
 ## The CMS for Everyone
 
-###What is cliquedit?
-Is a Headless Content Management System,  from okskñvcñlkxzcvñlkxzcvlknxlñkn xkj xlkjh xkljh klxjh kxjh kxljh x
+### What is cliquedit?
+Is a Headless Content Management System,  developed to create and edit content to be delivered to any media output.
 
-Es un CMS Headless desarrollado con el fin de lograr la gestión de contenidos de sitios web diseñados y programados a medida, sin frameworks
+Current ALPHA version is only for HTML/CSS websites and the first API is developed in PHP language.
 
-Licencias y cómo adquirirlo
+cliquedit is being tested in several websites and is aimed to work seamlessly in any framework enviroment. It's been proved to work fine with other APIs like Shopify, PayPal, Conekta and custom PHP systems.
 
-Ventajas
+Current version is recommended to be used only on freshly developed, unframed, websites.
+
+### Licences / How to buy
+cliquedit is free to test in any non-commercial website. To ask for a Developers API Key, just write to hello@cliqued.it
+
+For commercial websites you should go to our website cliqued.it and purchase a Single Website Licence or a Multi Website Licence (recommended for web development, marketing or advertising agencies) in our webstore.
+
+
+### Ventajas
+lkjslkjslkjslkjs lkjs lkjs lksj
 
 Dependencias (jQuery)
 
