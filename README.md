@@ -77,20 +77,38 @@ $cliqued->page()->load([
 ]);
 ```
 
-3. Especificar a cliqu**edit** cuál es el inicio de la página.
+3. Specify the page start. It should be the `<html>` tag:
 
 ```php
 <html <?php $cliqued->page()->start() ?> lang="en">
 ```
 
-### Preparación 
-
-(Como preparar la página para que se pueda empezar a llamar las funciones de CE)
-
+4. Call the `loadEditor()` function before the end of `<body>` to activate the content edition tools when a cliqu**edit** session is open. Make sure this function call is after the jQuery script.
+	
+```php
+$cliqued->loadEditor()
+```
 
 ### Basic use
 
-(Como volver editables Textos, Imagenes, Anclas, Audios, Videos, Códigos Embebidos )
+#### Text
+
+
+#### Image
+
+
+#### Link
+
+
+#### Audio
+
+
+#### Video
+
+
+#### Embedded code
+
+
 
 ### Advanced use
 
