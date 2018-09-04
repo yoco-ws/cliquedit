@@ -287,7 +287,41 @@ Optional Parameters:
 
 ### Advanced use
 
-( Parametros adicionales para cada método como el richtext, implementaciones avanzadas como comportamientos diferentes cuando la sesión esta iniciada )
+#### Composed Elements
+
+The composed element enables cliqu**edit** to create dynamic elements that can transform into other type of elements. For example, this allows the final user to convert a text element into a video or an embedded code. It also enables the option to hide these elements.
+
+The composed element uses a basic markup for the elements it generates. This prevents you to use your own markup for these elements.
+
+In order to create a composed element you use the function `render()` of the composed object.
+
+```php
+//The composed render function
+$cliqued->composed()->render( 'name', types );
+```
+
+Where `name` is a custom string name given to this particular element.
+
+Required Parameters:
+`types` - An array that contains the list of elements types that this composed element can transform into. The supported elements are `text`,`image`, `audio`, `video`, `embed`, `none`. Requires at least one type of element. Passing the `none` type will allow you to hide this element.
+
+##### Example
+```php
+<!-- Composed element that can be either a text or an image -->
+<div>
+	<?php $cliqued->composed()->render('dynamic-content', ['text', 'image']) ?>
+</div>
+
+<!-- Composed element that can be either a image, video, and can be hidden -->
+<div>
+	<?php $cliqued->composed()->render('other-dynamic-content', ['image', 'video', 'none']) ?>
+</div>
+
+```
+
+#### Articles and Collections
+
+Up until now every element that has been used needed an unique `name`. These elements are unique per page, meaning t
 
 ( Colecciones y artículos )
 
