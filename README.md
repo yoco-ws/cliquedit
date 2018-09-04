@@ -163,15 +163,14 @@ Optional Parameters:
 
 #### Link
 
-An image is an element represented by the `<img>` tag. As of now, the Alpha version of cliqu**edit** only supports the edition of `<img>` tags.
+A link or anchor is an element represented by the `<a>` tag.
 
-In order to convert a static image into an editable image you use the function `render()` of the image object.
+In order to convert a static link into an editable link you use the function `render()` of the link object.
 
 ```php
-//The image render function
-$cliqued->image()->render('name', [
-	'src' => '/path/to/image',
-	'alt' => 'Default description'
+//The link render function
+$cliqued->link()->render('name', [
+	'href' => 'https://cliqued.it',
 ]);
 ```
 
@@ -179,21 +178,46 @@ Where `name` is a custom string name given to this particular element.
 
 Optional Parameters:
 
-`src` - The path to the default image file. This image will be displayed if the element hasn't been edited before, if not provided it will display a generic image.
-
-`alt` - The default content of the `alt` attribute which will appear unless the element is edited. Defaults to an empty description.
+`href` - The default `href` attribute of this `<a>` tag. This value will be used if the element hasn't been edited before, if not provided it will use a `#`.
 
 ##### Example
 ```php
-<!-- Static image -->
-<img class="img-fluid" src="img/resources/banner.png" />
+<!-- Static link -->
+<a href="https://cliqued.it" target="_blank"> Cliqued.it </a>
 
-<!-- Editable image -->
-<img class="img-fluid" <?php $cliqued->image()->render('banner', ['src' => 'img/resources/banner.png']) ?> />
+<!-- Editable link -->
+<a <?php $cliqued->link()->render('banner-link', ['href' => 'https://cliqued.it']) ?> target="_blank"> Cliqued.it </a>
 
 ```
 
 #### Audio
+
+An audio is an element represented by the `<audio>` tag. cliquedit supports only audios with a single file, using the `src` attribute of the audio tag. It doesn't support the `<source>` tags within the audio structure. 
+
+In order to convert a static audio into an editable audio you use the function `render()` of the audio object.
+
+```php
+//The audio render function
+$cliqued->audio()->render('name', [
+	'src' => '/path/to/sound/file',
+]);
+```
+
+Where `name` is a custom string name given to this particular element.
+
+Optional Parameters:
+
+`src` - The default `src` attribute of this `<audio>` tag. This value will be used if the element hasn't been edited before. Defaults to an empty audio.
+
+##### Example
+```php
+<!-- Static audio -->
+<audio src=""> </audio>
+
+<!-- Editable audio -->
+<audio <?php $cliqued->audio()->render('banner-music', ['src' => 'media/.................']) ?> src=""> </audio>
+
+```
 
 
 #### Video
