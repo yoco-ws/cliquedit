@@ -65,12 +65,12 @@ Manually download or clone cliqu**edit** repository to any directory within your
 
 If the page hasn't been created yet, this function will create it with the given ID.
 
-`<?php	//Requests pages or collections to load
+```<?php	//Requests pages or collections to load
 	$cliqued->page()->load([
 		'page' => $config['home'], //required
 		'collection' => 'test,test-2' //optional. One or more comma-separated collections
 	]);
-?>`
+?>```
 
 3. Especificar a cliqu**edit** cuál es el inicio de la página.
 
