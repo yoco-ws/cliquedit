@@ -53,13 +53,17 @@ Manually download or clone cliqu**edit** repository to any directory within your
 
 2. Import cliqu**edit** library into any file that will require it, before HTML markup:
 
-`<?php require(‘cliquedit/cliquedit.php’); ?>`
+```php
+require(‘cliquedit/cliquedit.php’); 
+```
 
 ### How to use
 
 1. Get the instance of cliqu**edit** object:
 
-`<?php $cliqued = \CE\CliquedIt::getInstance(); ?>`
+```php
+$cliqued = \CE\CliquedIt::getInstance(); 
+```
 
 2. Request cliqu**edit** to load the page content based on its ID. Additionally you can request any number of collection content to be used in the page.
 
@@ -75,8 +79,9 @@ $cliqued->page()->load([
 
 3. Especificar a cliqu**edit** cuál es el inicio de la página.
 
-`<html <?php $cliqued->page()->start() ?> lang="en">`
-
+```php
+<html <?php $cliqued->page()->start() ?> lang="en">
+```
 
 ### Preparación 
 
