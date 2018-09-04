@@ -22,8 +22,10 @@ cliquedit is highly friendly and intuitive for the final user.
 
 ### How it works
 
+cliquedit replaces the attribute within the html tag being modified...
 Each page has an unique numeric ID...
 Cliquedit takes the default values if the connection is lost...
+Each element has a unique name...
 (Aquitectura, diseño, etc. No lo veo tan necesario para una documentación de implementación pero es un plus)
 
 ### Dependencies 
@@ -95,7 +97,7 @@ $cliqued->loadEditor()
 #### Text
 
 A text could be a title, a paragraph, or the text within an anchor. It's basically the content of a text html tag such as a `<p>`, `<h1>`, `<strong>` and so on.
-In order to convert a static text into an editable text you use the function `render()` of the text object.
+In order to convert a non editable text into an editable text you use the function `render()` of the text object.
 
 ```php
 //The text render function
@@ -114,8 +116,8 @@ Optional Parameters:
 `richtext` - A boolean parameter to enable or disable rich text edition for this element. Defaults to false.
 
 ##### Example
-```php
-<!-- Static title -->
+```html+php
+<!-- Non editable title -->
 <h1 class="h1"> Welcome to my website! </h1>
 
 <!-- Editable title -->
@@ -133,7 +135,7 @@ Optional Parameters:
 
 An image is an element represented by the `<img>` tag. As of now, the Alpha version of cliqu**edit** only supports the edition of `<img>` tags.
 
-In order to convert a static image into an editable image you use the function `render()` of the image object.
+In order to convert a non editable image into an editable image you use the function `render()` of the image object.
 
 ```php
 //The image render function
@@ -153,7 +155,7 @@ Optional Parameters:
 
 ##### Example
 ```php
-<!-- Static image -->
+<!-- Non editable image -->
 <img class="img-fluid" src="img/resources/banner.png" />
 
 <!-- Editable image -->
@@ -165,7 +167,7 @@ Optional Parameters:
 
 A link or anchor is an element represented by the `<a>` tag.
 
-In order to convert a static link into an editable link you use the function `render()` of the link object.
+In order to convert a non editable link into an editable link you use the function `render()` of the link object.
 
 ```php
 //The link render function
@@ -187,14 +189,13 @@ Optional Parameters:
 
 <!-- Editable link -->
 <a <?php $cliqued->link()->render('banner-link', ['href' => 'https://cliqued.it']) ?> target="_blank"> Cliqued.it </a>
-
 ```
 
 #### Audio
 
 An audio is an element represented by the `<audio>` tag. cliquedit supports only audios with a single file, using the `src` attribute of the audio tag. It doesn't support the `<source>` tags within the audio structure. 
 
-In order to convert a static audio into an editable audio you use the function `render()` of the audio object.
+In order to convert a non editable audio into an editable audio you use the function `render()` of the audio object.
 
 ```php
 //The audio render function
@@ -211,19 +212,76 @@ Optional Parameters:
 
 ##### Example
 ```php
-<!-- Static audio -->
+<!-- Non editable audio -->
 <audio src=""> </audio>
 
 <!-- Editable audio -->
-<audio <?php $cliqued->audio()->render('banner-music', ['src' => 'media/.................']) ?> src=""> </audio>
+<audio <?php $cliqued->audio()->render('banner-music', ['src' => 'media/audio/cliquedit.mp3']) ?>> </audio>
 
 ```
 
 
 #### Video
 
+A video is an element represented by the `<video>` tag. cliqu**edit** supports only videos with a single file, using the `src` attribute of the video tag. It doesn't support the `<source>` tags within the video structure. 
+
+In order to convert a non editable video into an editable video you use the function `render()` of the video object.
+
+```php
+//The video render function
+$cliqued->video()->render('name', [
+	'src' => '/path/to/video/file',
+]);
+```
+
+Where `name` is a custom string name given to this particular element.
+
+Optional Parameters:
+
+`src` - The default `src` attribute of this `<video>` tag. This value will be used if the element hasn't been edited before. Defaults to a generic video.
+
+##### Example
+```php
+<!-- Non editable video -->
+<video src=""> </video>
+
+<!-- Editable video -->
+<video <?php $cliqued->video()->render('banner-video', ['src' => 'media/video/cliquedit.mp4']) ?>> </video>
+
+```
 
 #### Embedded code
+
+cliquedit allows to include embedded code such as Google Maps or YouTube Videos within a page by using the function `render()` of the embed object.
+
+```php
+//The embed render function
+$cliqued->embed()->render('name', [
+	'code' => '<iframe>This is some content</iframe>',
+]);
+```
+
+Where `name` is a custom string name given to this particular element.
+
+Optional Parameters:
+
+`code` - The default content. This value will be used if the element hasn't been edited before. Defaults to a generic text.
+
+##### Example
+```php
+<!-- Non editable embedded code -->
+<div class="container"> 
+	<iframe src="https://player.vimeo.com/video/287722915" allowfullscreen></iframe>
+</div>
+
+<!-- Editable embedded code -->
+
+<div class="container">
+	<?php $cliqued->embed()->render('banner-embed', [
+		'code' => '<iframe src="https://player.vimeo.com/video/287722915" allowfullscreen></iframe>'
+	]) ?>
+</div>
+```
 
 
 
