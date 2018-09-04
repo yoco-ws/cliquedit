@@ -44,7 +44,7 @@ cliquedit is highly friendly and intuitive for the final user.
 2. Editar archivo de configuración (api_key, home, install_dir, mediaDir
 
 3. En cada página o en un archivo global del sitio, importar la librería cliquedit, en la primera línea HMTL 
-<?php require(‘cliquedit/cliquedit.php’); ?>
+```<?php require(‘cliquedit/cliquedit.php’); ?>```
 
 4. Obtener una instancia de cliquedit.
 <?php $cliqued = \CE\CliquedIt::getInstance(); ?>
