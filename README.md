@@ -28,6 +28,8 @@ Cliquedit takes the default values if the connection is lost...
 Each element has a unique name...
 (Aquitectura, diseño, etc. No lo veo tan necesario para una documentación de implementación pero es un plus)
 
+Up until now every element that has been used needed an unique `name`. These elements are unique per page, meaning that by repeating them you only replicate the content within 
+
 ### Dependencies 
 
 jQuery ___
@@ -319,9 +321,38 @@ Required Parameters:
 
 ```
 
-#### Articles and Collections
+#### Collections and Articles
+By using the cliquedit `collection` and `article` objects you can define your own editable components and use them accross different sections of your website, regardless of the containing page. The information stored within the articles of a collection is preserved through all the project.
 
-Up until now every element that has been used needed an unique `name`. These elements are unique per page, meaning t
+cliquedit Articles can also be multiplied, this enables you to define a component such as a carousel, where the collection would be `carousel` and each of it's articles would be a `slide`.
+
+In order to use cliquedit collections 
+
+```html+php
+<div <?php $cliqued->collection('test') ?> >
+			
+	<?php $cliqued->articles([
+		'view' => 'views/templates/test.php',
+		'allowAddition' => true,
+		'friendlyUrl' => true
+	]) ?>
+
+</div>
+```
+
+**test.php**
+```html+php
+
+<?php $cliqued = \CE\CliquedIt::getInstance(); ?>
+
+<div <?php $cliqued->article() ?> >
+	<h1>
+		<?php $cliqued->text()->render('title') ?>
+	</h1>
+</div>
+```
+
+repeat content names to group
 
 ( Colecciones y artículos )
 
