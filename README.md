@@ -370,6 +370,11 @@ Optional parameters.
 
 `count` - An integer used to determine how many items will be "printed" with the render method. cliquedit gets the items and stores them as a stack, and everytime the render method displays an item, it will pop it out of the stack. This means that if you have 10 items and pass a parameter of `count => 7`, there will be 3 more items left in the stack. This is useful because you can pass print the first 7 elements with a particular view, and the next 3 with a different view, somewhere else in the same page.
 
+`detailView` - For items that have a **full view** such as a blog post or an entire landing page, this parameters defines the path to the full view file.
+
+#### Single, Full View Items
+
+
 ### Plataformas soportadas 
 
 (Todos los navegadores, excepto en la plataforma iOS )
