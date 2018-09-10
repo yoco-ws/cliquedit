@@ -322,39 +322,44 @@ Required Parameters:
 ```
 
 #### Collections and Articles
-By using the cliquedit `collection` and `article` objects you can define your own editable components and use them accross different sections of your website, regardless of the containing page. The information stored within the articles of a collection is preserved through all the project.
+By using the cliquedit `collection` and `item` objects you can define your own editable components and use them accross different sections of your website, regardless of the containing page. The information stored within the items of a collection is preserved through all your project, meaning that you can use these items and their stored information in any page.
 
-cliquedit Articles can also be multiplied, this enables you to define a component such as a carousel, where the collection would be `carousel` and each of it's articles would be a `slide`.
+cliquedit Items can also be multiplied, this enables you to define a component such as a carousel, where the collection would be `carousel` and each of it's items would be a `slide`.
 
-In order to use cliquedit collections 
+In order to use cliquedit collections you must first define where in your code the collection starts with the `collection()->start()` method, the beggining could be the opening tag of a `<div>` for example. This div element will contain one or more `items`. In the following example we will use the `render()` method of the Collection object to create a carousel with multiplicable slides.
+
+The render() method of the Collection will require a `view` in which you will define the structure of your items.
 
 ```html+php
-<div <?php $cliqued->collection('test') ?> >
+<!-- This div will be our collection, so we mark it's start with the collection()->start() method -->
+<div class="carousel" <?php $cliqued->collection()->start('carousel') ?> >
 			
-	<?php $cliqued->articles([
-		'view' => 'views/templates/test.php',
-		'allowAddition' => true,
-		'friendlyUrl' => true
+	<?php $cliqued->collection->render([
+		'view' => 'views/componentes/carousel-slide.php', //This is where we define the structure of a slide
+		'allowAddition' => true
 	]) ?>
 
 </div>
 ```
 
-**test.php**
+**views/componentes/carousel-slide.php**
 ```html+php
-
-<?php $cliqued = \CE\CliquedIt::getInstance(); ?>
-
-<div <?php $cliqued->article() ?> >
-	<h1>
-		<?php $cliqued->text()->render('title') ?>
-	</h1>
+<!-- We mark the beggining of this item -->
+<div class="slide" data-carousel <?php $cliqued->collection()->item() ?> >
+	...
 </div>
 ```
+This will create a Collection named `carousel` with multiplicable items, where the HTML of each item is defined in a carousel-slide.php file. You can call this collection and it's items anywhere, and you can even pass a different view if you needed.
 
-repeat content names to group
+It's important to note that when using collections you must specify `cliquedit` which collections you will be using, so that it can load the requested information when making the API call.
 
-( Colecciones y artículos )
+```php
+//This will load the first 10 items of the collection named 'carousel', as well as the content of page number 6
+$cliqued->page()->load([
+	'page' => 6,
+	'collections' => 'carousel|10'
+]);
+```
 
 
 ### Plataformas soportadas 
