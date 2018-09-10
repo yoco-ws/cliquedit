@@ -360,7 +360,15 @@ $cliqued->page()->load([
 	'collections' => 'carousel|10'
 ]);
 ```
+Required parameters for the `render()` method of the `Collection` object.
 
+`view` - The path to the file where you define the structure of the items used by this collection.
+
+Optional parameters.
+
+`allowAddition` - Whether or not to allow the final user to create new items of the collection. Useful when you need to disable this function in a particular section of you website. Defaults to true.
+
+`count` - An integer used to determine how many items will be "printed" with the render method. cliquedit gets the items and stores them as a stack, and everytime the render method displays an item, it will pop it out of the stack. This means that if you have 10 items and pass a parameter of `count => 7`, there will be 3 more items left in the stack. This is useful because you can pass print the first 7 elements with a particular view, and the next 3 with a different view, somewhere else in the same page.
 
 ### Plataformas soportadas 
 
