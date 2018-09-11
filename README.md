@@ -9,7 +9,7 @@
  
 1.2. [Benefits](#benefits)
 
-1.3. [How it works](#how-it-works)
+1.3. [How it works](https://github.com/yoco-ws/cliquedit#13-how-it-works)
 
 1.4. [Dependencies](#dependencies)
 
