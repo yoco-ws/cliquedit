@@ -1,8 +1,35 @@
 # cliquedit
 ## The CMS for Everyone
 
-### Index
-[What is cliquedit?](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+### 1. What is cliquedit?
+1.1. [Licences](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+[Benefits](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+[How it works](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+[Dependencies](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+[Base requirements](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+
+### 2. Getting started
+[Installation](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+[Get started](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+[How to use](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+
+#### 3. Basic use
+1. [ccc]()
+2. [ccc]()
+3. [ccc]()
+4. [ccc]()
+5. [ccc]()
+6. [ccc]()
+7. [ccc]()
+8. [ccc]()
+9. [ccc]()
+
+
+#### 4. Advanced use
+[Advanced use](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+
+[Supported platforms](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+
 
 
 ### What is cliquedit?
@@ -14,7 +41,7 @@ cliquedit is being tested in several websites and is aimed to work seamlessly in
 
 Current version is recommended to be used only on freshly developed, unframed, websites.
 
-### Licences / How to buy
+### Licences
 cliquedit is free to test in any non-commercial website with Developers API Key. To ask for a Developers API Key, just write to hello@cliqued.it
 
 For commercial websites you should go to our website cliqued.it and purchase a Single Website Licence or a Multi Website Licence (recommended for web development, marketing or advertising agencies) in our webstore.
@@ -414,7 +441,7 @@ $cliqued->page()->load([
 #### Single, Full View Items
 
 
-### Plataformas soportadas 
+#### Supported platforms 
 
 (Todos los navegadores, excepto en la plataforma iOS )
 
