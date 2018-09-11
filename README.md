@@ -2,9 +2,8 @@
 ## The CMS for Everyone
 
 ### 1. What is cliquedit?
-1.1. [Licences](https://github.com/yoco-ws/cliquedit/blob/master/README.md#licences)
-
-1.2. [Benefits](https://github.com/yoco-ws/cliquedit/blob/master/README.md#benefits)
+-1.1. [Licences](https://github.com/yoco-ws/cliquedit/blob/master/README.md#licences)
+-1.2. [Benefits](https://github.com/yoco-ws/cliquedit/blob/master/README.md#benefits)
 
 1.3. [How it works](https://github.com/yoco-ws/cliquedit/blob/master/README.md#how-it-works)
 
