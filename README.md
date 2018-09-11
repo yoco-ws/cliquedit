@@ -2,27 +2,27 @@
 ## The CMS for Everyone
 
 ### 1. What is cliquedit?
-1.1. [Licences](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
-[Benefits](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
-[How it works](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
-[Dependencies](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
-[Base requirements](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+1.1. [Licences](https://github.com/yoco-ws/cliquedit/blob/master/README.md#licences)
+1.2. [Benefits](https://github.com/yoco-ws/cliquedit/blob/master/README.md#benefits)
+1.3. [How it works](https://github.com/yoco-ws/cliquedit/blob/master/README.md#how-it-works)
+1.4. [Dependencies](https://github.com/yoco-ws/cliquedit/blob/master/README.md#dependencies)
+1.5. [Base requirements](https://github.com/yoco-ws/cliquedit/blob/master/README.md#base-requirements)
 
 ### 2. Getting started
-[Installation](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
-[Get started](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
-[How to use](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+2.1. [Installation](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+2.2. [Get started](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+2.3. [How to use](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
 
 #### 3. Basic use
-1. [ccc]()
-2. [ccc]()
-3. [ccc]()
-4. [ccc]()
-5. [ccc]()
-6. [ccc]()
-7. [ccc]()
-8. [ccc]()
-9. [ccc]()
+3.1. [ccc]()
+3.2. [ccc]()
+3.3. [ccc]()
+3.4. [ccc]()
+3.5. [ccc]()
+3.6. [ccc]()
+3.7. [ccc]()
+3.8. [ccc]()
+3.9. [ccc]()
 
 
 #### 4. Advanced use
