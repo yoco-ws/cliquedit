@@ -410,7 +410,7 @@ The render() method of the Collection will require a `view` in which you will de
 	<?php $cliqued->collection->render([
 		'view' => 'path/to/file',
 		'allowAddition' => true,
-		'count' => true
+		'count' => n
 	]) ?>
 
 </div>
@@ -424,7 +424,7 @@ Optional parameters.
 
 `allowAddition` - Whether or not to allow the final user to create new items of the collection. Useful when you need to disable this function in a particular section of you website. Defaults to true.
 
-`count` - An integer used to determine how many items will be "printed" with the render method. cliquedit gets the items and stores them as a stack, and everytime the render method displays an item, it will pop it out of the stack. This means that if you have 10 items and pass a parameter of `count => 7`, there will be 3 more items left in the stack. This is useful because you can pass print the first 7 elements with a particular view, and the next 3 with a different view, somewhere else in the same page.
+`count` - An integer used to determine how many items will be "printed" with the render method. cliquedit gets the items and stores them as a stack, and everytime the render method displays an item, it will pop it out of the stack. This means that if you have 10 items and pass a parameter of `count => 7`, there will be 3 more items left in the stack. This is useful because you can pass print the first 7 elements with a particular view, and the next 3 with a different view, somewhere else in the same page. If not specified, this method prints every item in the stack.
 
 
 #####Example
@@ -461,7 +461,40 @@ $cliqued->page()->load([
 ```
 
 
-#### 4.3. Single, Full View Items
+#### 4.2.1. Single, Full View Items
+You may want to show a more detailed view of each item in a Collection, in addition to the basic view previously shown. This is the case for blog articles, image galleries and landing pages.
+
+The `render()` method of the Collection object allows you to define the path to this detailed view, which would normally be the path to a php file. This will enable you to insert a link in the "printed" items, and this link will take you to the detailed view with the proper GET parameters. These parameters are the name of the collection and the id of the corresponding item. This is the same logic used in most implementations of a blog.
+
+Therefore, we will first need to render the collection with the proper links and we do this by using the `render()` method of the Collection object with the `detailView` parameter:
+
+```html+php
+$cliqued->collection->render([
+	'view' => 'path/to/file',
+	'allowAddition' => true,
+	'count' => n,
+	'detailView' => 'path/to/detailed/view'
+]) ?>
+```
+
+Where `detailView` is a string that defines the path to a file that will be used when rendering the links of each item. Each item will have a unique link with it's proper id and collection as GET parameters. For example, if you pass the value "post.php" to this parameter, the rendered links would look like this `post.php?category=collection_name&id=n` where  
+
+In order to display an item in a full page view, use the `render()` method of the Collection with the optional parameter `detailedView`, in which you will specify the path to the full view template file.
+
+
+
+```html+php
+<div <?php $cliqued->collection()->start('name') ?> >
+			
+	<?php $cliqued->collection->render([
+		'view' => 'path/to/file',
+		'allowAddition' => true,
+		'count' => true
+	]) ?>
+
+</div>
+```
+
 
 
 ### Supported platforms 
