@@ -1,6 +1,10 @@
 # cliquedit
 ## The CMS for Everyone
 
+### Index
+[What is cliquedit?](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+
+
 ### What is cliquedit?
 Is a Headless Content Management System,  developed to create and edit content to be delivered to any media output.
 
