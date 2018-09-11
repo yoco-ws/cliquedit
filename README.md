@@ -1,7 +1,9 @@
 # cliquedit
 ## The CMS for Everyone
 
-### 1. What is cliquedit?
+### Index
+
+#### 1. What is cliquedit?
 
 1.1. [Licences](#licences)
  
@@ -13,7 +15,7 @@
 
 1.5. [Base requirements](#base-requirements)
 
-### 2. Getting started
+#### 2. Getting started
 
 2.1. [Installation](#installation)
 
@@ -48,7 +50,10 @@
 
 
 
-### What is cliquedit?
+
+
+
+### 1. What is cliquedit?
 Is a Headless Content Management System,  developed to create and edit content to be delivered to any media output.
 
 Current ALPHA version is only for HTML/CSS websites and the first API is developed in PHP language.
@@ -57,17 +62,17 @@ cliquedit is being tested in several websites and is aimed to work seamlessly in
 
 Current version is recommended to be used only on freshly developed, unframed, websites.
 
-### Licences
+#### 1.1. Licences
 cliquedit is free to test in any non-commercial website with Developers API Key. To ask for a Developers API Key, just write to hello@cliqued.it
 
 For commercial websites you should go to our website cliqued.it and purchase a Single Website Licence or a Multi Website Licence (recommended for web development, marketing or advertising agencies) in our webstore.
 
-### Benefits
+#### 1.2. Benefits
 cliquedit reduces CMS integration time to almost zero.
 cliquedit can be adapted to any HMTL/CSS website, regardless of its structure.
 cliquedit is highly friendly and intuitive for the final user.
 
-### How it works
+#### 1.3. How it works
 
 cliquedit replaces the attribute within the html tag being modified...
 Each page has an unique numeric ID...
@@ -77,19 +82,21 @@ Each element has a unique name...
 
 Up until now every element that has been used needed an unique `name`. These elements are unique per page, meaning that by repeating them you only replicate the content within 
 
-### Dependencies 
+#### 1.4. Dependencies 
 
 jQuery ___
 
-### Base requirements
+#### 1.5. Base requirements
 
 PHP Server with CURL Modules enabled.
 
-### Installation 
+### 2. Getting started
+
+#### 2.1. Installation 
 
 Manually download or clone cliqu**edit** repository to any directory within your project. We recommend you to place cliqu**edit** directory in your project root.
 
-### Get started
+#### 2.2. Get started
 
 1. Edit config file `config.ini`:
 
@@ -109,7 +116,7 @@ Manually download or clone cliqu**edit** repository to any directory within your
 require(‘cliquedit/cliquedit.php’); 
 ```
 
-### How to use
+#### 2.3. How to use
 
 1. Get the instance of cliqu**edit** object:
 
@@ -161,9 +168,9 @@ $cliqued->page()->load([
 $cliqued->loadEditor()
 ```
 
-### Basic use
+### 3. Basic use
 
-#### Text
+#### 3.1. Text
 
 A text could be a title, a paragraph, or the text within an anchor. It's basically the content of a text html tag such as a `<p>`, `<h1>`, `<strong>` and so on.
 In order to convert a non editable text into an editable text you use the function `render()` of the text object.
@@ -200,7 +207,7 @@ Optional Parameters:
 
 ```
 
-#### Image
+#### 3.2. Image
 
 An image is an element represented by the `<img>` tag. As of now, the Alpha version of cliqu**edit** only supports the edition of `<img>` tags.
 
@@ -232,7 +239,7 @@ Optional Parameters:
 
 ```
 
-#### Link
+#### 3.3. Link
 
 A link or anchor is an element represented by the `<a>` tag.
 
@@ -260,7 +267,7 @@ Optional Parameters:
 <a <?php $cliqued->link()->render('banner-link', ['href' => 'https://cliqued.it']) ?> target="_blank"> Cliqued.it </a>
 ```
 
-#### Audio
+#### 3.4. Audio
 
 An audio is an element represented by the `<audio>` tag. cliquedit supports only audios with a single file, using the `src` attribute of the audio tag. It doesn't support the `<source>` tags within the audio structure. 
 
@@ -290,7 +297,7 @@ Optional Parameters:
 ```
 
 
-#### Video
+#### 3.5. Video
 
 A video is an element represented by the `<video>` tag. cliqu**edit** supports only videos with a single file, using the `src` attribute of the video tag. It doesn't support the `<source>` tags within the video structure. 
 
@@ -319,7 +326,7 @@ Optional Parameters:
 
 ```
 
-#### Embedded code
+#### 3.6. Embedded code
 
 cliquedit allows to include embedded code such as Google Maps or YouTube Videos within a page by using the function `render()` of the embed object.
 
@@ -354,9 +361,9 @@ Optional Parameters:
 
 
 
-### Advanced use
+### 4. Advanced use
 
-#### Composed Elements
+#### 4.1. Composed Elements
 
 The composed element enables cliqu**edit** to create dynamic elements that can transform into other type of elements. For example, this allows the final user to convert a text element into a video or an embedded code. It also enables the option to hide these elements.
 
@@ -388,7 +395,7 @@ Required Parameters:
 
 ```
 
-#### Collections and Items
+#### 4.2. Collections and Items
 By using the cliquedit `collection` and `item` objects you can define your own editable components and use them accross different sections of your website, regardless of the containing page. The information stored within the items of a collection is preserved through all your project, meaning that you can use these items and their stored information in any page.
 
 cliquedit Items can also be multiplied, this enables you to define a component such as a carousel, where the collection would be `carousel` and each of it's items would be a `slide`.
@@ -454,10 +461,10 @@ $cliqued->page()->load([
 ```
 
 
-#### Single, Full View Items
+#### 4.3. Single, Full View Items
 
 
-#### Supported platforms 
+### Supported platforms 
 
 (Todos los navegadores, excepto en la plataforma iOS )
 
