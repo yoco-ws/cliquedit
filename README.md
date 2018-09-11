@@ -82,6 +82,24 @@ $cliqued->page()->load([
 ]);
 ```
 
+Required parameters
+`page` - An integer used to identify the page to be loaded.
+
+Optional parameters
+`collections` - A comma-separated string specifying which collections you will be using in the page. Optionally, you can use a pipe to indicate the number of items to request for each collection. This is the structure:
+
+`[collection-name(|n)?,]+` 
+
+where `collection-name` is the name of the collection and `n` is the number of items to request.
+
+```php
+//This will load the first 10 items of the collection named 'carousel', the whole 'list' collection and 20 items of the 'gallery' collection; as well as the content of page number 6.
+$cliqued->page()->load([
+	'page' => 6,
+	'collections' => 'carousel|10,list,gallery|20'
+]);
+```
+
 3. Specify the page start. It should be the `<html>` tag:
 
 ```php
@@ -321,17 +339,42 @@ Required Parameters:
 
 ```
 
-#### Collections and Articles
+#### Collections and Items
 By using the cliquedit `collection` and `item` objects you can define your own editable components and use them accross different sections of your website, regardless of the containing page. The information stored within the items of a collection is preserved through all your project, meaning that you can use these items and their stored information in any page.
 
 cliquedit Items can also be multiplied, this enables you to define a component such as a carousel, where the collection would be `carousel` and each of it's items would be a `slide`.
 
-In order to use cliquedit collections you must first define where in your code the collection starts with the `collection()->start()` method, the beggining could be the opening tag of a `<div>` for example. This div element will contain one or more `items`. In the following example we will use the `render()` method of the Collection object to create a carousel with multiplicable slides.
+In order to use cliquedit collections you must first define where in your code the collection starts with the `collection()->start()` method. The beggining could be the opening tag of a `<div>` for example. This div element will contain one or more `items`. In the following example we will use the `render()` method of the Collection object to create a carousel with multiplicable slides.
 
 The render() method of the Collection will require a `view` in which you will define the structure of your items.
 
 ```html+php
-<!-- This div will be our collection, so we mark it's start with the collection()->start() method -->
+<div <?php $cliqued->collection()->start('name') ?> >
+			
+	<?php $cliqued->collection->render([
+		'view' => 'path/to/file',
+		'allowAddition' => true,
+		'count' => true
+	]) ?>
+
+</div>
+```
+
+Required parameters for the `render()` method of the `Collection` object.
+
+`view` - The path to the file where you define the structure of the items used by this collection.
+
+Optional parameters.
+
+`allowAddition` - Whether or not to allow the final user to create new items of the collection. Useful when you need to disable this function in a particular section of you website. Defaults to true.
+
+`count` - An integer used to determine how many items will be "printed" with the render method. cliquedit gets the items and stores them as a stack, and everytime the render method displays an item, it will pop it out of the stack. This means that if you have 10 items and pass a parameter of `count => 7`, there will be 3 more items left in the stack. This is useful because you can pass print the first 7 elements with a particular view, and the next 3 with a different view, somewhere else in the same page.
+
+
+#####Example
+
+```html+php
+<!-- This div will be our collection, so we mark it's beggining with the collection()->start() method -->
 <div class="carousel" <?php $cliqued->collection()->start('carousel') ?> >
 			
 	<?php $cliqued->collection->render([
@@ -346,7 +389,7 @@ The render() method of the Collection will require a `view` in which you will de
 ```html+php
 <!-- We mark the beggining of this item -->
 <div class="slide" data-carousel <?php $cliqued->collection()->item() ?> >
-	...
+	<img <?php $cliqued->image()->render('banner', ['src' => 'img/resources/banner.png']) ?> >
 </div>
 ```
 This will create a Collection named `carousel` with multiplicable items, where the HTML of each item is defined in a carousel-slide.php file. You can call this collection and it's items anywhere, and you can even pass a different view if you needed.
@@ -360,17 +403,7 @@ $cliqued->page()->load([
 	'collections' => 'carousel|10'
 ]);
 ```
-Required parameters for the `render()` method of the `Collection` object.
 
-`view` - The path to the file where you define the structure of the items used by this collection.
-
-Optional parameters.
-
-`allowAddition` - Whether or not to allow the final user to create new items of the collection. Useful when you need to disable this function in a particular section of you website. Defaults to true.
-
-`count` - An integer used to determine how many items will be "printed" with the render method. cliquedit gets the items and stores them as a stack, and everytime the render method displays an item, it will pop it out of the stack. This means that if you have 10 items and pass a parameter of `count => 7`, there will be 3 more items left in the stack. This is useful because you can pass print the first 7 elements with a particular view, and the next 3 with a different view, somewhere else in the same page.
-
-`detailView` - For items that have a **full view** such as a blog post or an entire landing page, this parameters defines the path to the full view file.
 
 #### Single, Full View Items
 
