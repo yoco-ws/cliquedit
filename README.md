@@ -83,9 +83,11 @@ $cliqued->page()->load([
 ```
 
 Required parameters
+
 `page` - An integer used to identify the page to be loaded.
 
 Optional parameters
+
 `collections` - A comma-separated string specifying which collections you will be using in the page. Optionally, you can use a pipe to indicate the number of items to request for each collection. This is the structure:
 
 `[collection-name(|n)?,]+` 
