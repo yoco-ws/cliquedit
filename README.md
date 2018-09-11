@@ -3,21 +3,21 @@
 
 ### 1. What is cliquedit?
 
-1.1. [Licences](https://github.com/yoco-ws/cliquedit/blob/master/README.md#licences)
+1.1. [Licences](#licences)
  
-1.2. [Benefits](https://github.com/yoco-ws/cliquedit/blob/master/README.md#benefits)
+1.2. [Benefits](#benefits)
 
-1.3. [How it works](https://github.com/yoco-ws/cliquedit/blob/master/README.md#how-it-works)
+1.3. [How it works](#how-it-works)
 
-1.4. [Dependencies](https://github.com/yoco-ws/cliquedit/blob/master/README.md#dependencies)
+1.4. [Dependencies](#dependencies)
 
-1.5. [Base requirements](https://github.com/yoco-ws/cliquedit/blob/master/README.md#base-requirements)
+1.5. [Base requirements](#base-requirements)
 
 ### 2. Getting started
 
-2.1. [Installation](https://github.com/yoco-ws/cliquedit/blob/master/README.md#installation)
+2.1. [Installation](#installation)
 
-2.2. [Get started](https://github.com/yoco-ws/cliquedit/blob/master/README.md#get-started)
+2.2. [Get started](#get-started)
 
 2.3. [How to use](#how-to-use)
 
@@ -27,24 +27,24 @@
 
 3.2. [Image](#image)
 
-3.3. [Link]()
+3.3. [Link](#link)
 
-3.4. [Audio]()
+3.4. [Audio](#audio)
 
-3.5. [Video]()
+3.5. [Video](#video)
 
-3.6. [Embedded code]()
+3.6. [Embedded code](#embedded-code)
 
 
 #### 4. Advanced use
 
-4.1. [Composed elements]()
+4.1. [Composed elements](#composed-elements)
 
-4.2. [Collections an items]()
+4.2. [Collections and items](#collections-and-items)
 
-4.3. [Single, Full View Items]()
+4.3. [Single, full view items](#single-full-view-items)
 
-[Supported platforms](https://github.com/yoco-ws/cliquedit/blob/master/README.md#what-is-cliquedit)
+[Supported platforms](#supported-platforms)
 
 
 
