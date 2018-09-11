@@ -5,15 +5,15 @@
 
 #### 1. What is cliquedit?
 
-	1.1. [Licences](#licences)
+1.1. [Licences](#licences)
  
-	1.2. [Benefits](#benefits)
+1.2. [Benefits](#benefits)
 
-	1.3. [How it works](#how-it-works)
+1.3. [How it works](#how-it-works)
 
-	1.4. [Dependencies](#dependencies)
+1.4. [Dependencies](#dependencies)
 
-	1.5. [Base requirements](#base-requirements)
+1.5. [Base requirements](#base-requirements)
 
 #### 2. Getting started
 
