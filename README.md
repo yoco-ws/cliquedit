@@ -101,7 +101,7 @@ Manually download or clone cliqu**edit** repository to any directory within your
 
 #### 2.2. Get started
 
-1. Edit config file `config.ini`:
+1. Edit config file `config.ini` inside the Cliquedit directory:
 
 `api_key` - The secret key provided by cliqu**edit**
 
