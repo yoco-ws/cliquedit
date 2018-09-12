@@ -567,7 +567,7 @@ With this you would have created a multipliable collection of items, each with a
 
 Next you will need to handle these GET parameters in your `fullPagePath` file. The first thing you need to do is to ask `cliquedit` to request the given item and it's collection as a `Single Item`. A single article contains additional information such as the meta tags of this item and it's previous and next items.
 
-We do this by passing the `|single` option for this collection in the load() method of the Page object.
+We do this by passing the `|single` option for this collection in the load() method of the Page object, as well as passing the parameter `itemId` with the id of the current item, which is obtained by GET.
 
 ```php
 $cliqued->page()->load([
