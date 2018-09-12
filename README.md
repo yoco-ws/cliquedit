@@ -482,19 +482,15 @@ $cliqued->collection->render([
 
 Where `fullPagePath` is a string that defines the path to a file that will be used when rendering the links of each item. Each item will have a unique link with it's proper id and collection as GET parameters. For example, if you pass the value "post.php" to this parameter, the rendered links would look like this `post.php?collection=collection_name&id=n` where `n` is the id of the automatically generated item.
 
-You can even customize the name of these GET parameters by passing the `itemAlias` and `collectionAlias` in the `render()` method, so if you call the method like this:
 
 ```html+php
 $cliqued->collection->render([
 	'view' => 'views/modules/document_preview.php',
 	'allowAddition' => true,
 	'count' => 10,
-	'fullPagePath' => 'document.php',
-	'itemAlias' => 'folio',
-	'collectionAlias' => 'city'
+	'fullPagePath' => 'document.php'
 ]) ?>
 ```
-Assuming that this render methods corresponds to a collection named "New_York", when rendering the links it will result in `document.php?city=New_York&folio=120`.
 
 Lastly, you also need to specify where in your items you want to render these links using the `fullPagePath()` method of the Collection object. For this example, we do this in the `views/modules/document_preview.php` since thats the file used to define the structure of each item.
 
@@ -505,6 +501,14 @@ Lastly, you also need to specify where in your items you want to render these li
 	<a <?php $cliqued->collection()->fullPagePath() ?> > Read more </a> //This will print the proper url previously discussed
 </div>
 ```
+
+You can even customize the name of these GET parameters by passing the `itemAlias` and `collectionAlias` in the `fullPagePath()` method, so if you call the method like this:
+
+```html+php
+<a <?php $cliqued->collection()->fullPagePath( ['collectionAlias' => 'city', 'itemAlias' => 'folio'] ) ?> > Read more </a>
+```
+
+Assuming that this render methods corresponds to a collection named "New_York", when rendering the links it will result in `document.php?city=New_York&folio=120`.
 
 With this you would have created a multipliable collection of items, each with an automatically generated, working url.
 
