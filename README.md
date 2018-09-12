@@ -44,7 +44,7 @@
 
 4.2. [Collections and items](#collections-and-items)
 
-4.3. [Single, full view items](#single-full-view-items)
+4.3. [Items as full pages](#items-as-full-pages)
 
 [Supported platforms](#supported-platforms)
 
