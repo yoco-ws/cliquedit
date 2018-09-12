@@ -464,29 +464,6 @@ Optional parameters.
 ```
 This will create a Collection named `carousel` with multiplicable items, where the HTML of each item is defined in a carousel-slide.php file. You can call this collection and it's items anywhere, and you can even pass a different view if you needed.
 
-cliquedit can also generate a pagination component for your collections, and you do this by calling the method `paginate()` of the Collection Object and passing the `pageAlias` parameter when rendering the collection. This tells cliquedit to expect a GET parameter with the name of the passed `pageAlias` value, and to use this GET parameter to generate a proper pagination. 
-
-#####Example
-
-```html+php
-<!-- This div will be our collection, so we mark it's beggining with the collection()->start() method -->
-<div class="some-paginated-list" <?php $cliqued->collection()->start('carousel') ?> >
-	<!-- This collection requires pagination, so we pass the pageAlias parameter when rendering -->		
-	<?php $cliqued->collection->render([
-		'view' => 'views/components/list-element.php',
-		'allowAddition' => true,
-		'pageAlias' => 'page'
-	]) ?>
-	
-	<!-- And then we generate the pagination -->
-	<?php $cliqued->collection()->paginate( ['count' => 5, 'adjacents' => 2, 'pageAlias' => 'page' ] ) ?>
-
-</div>
-```
-
-You also need to specify that you will be using pagination for this collection when using the `load()` method of the Page Object.
-
-
 It's important to note that when using collections you must specify `cliquedit` which collections you will be using, so that it can load the requested information when making the API call.
 
 ```php
@@ -497,8 +474,50 @@ $cliqued->page()->load([
 ]);
 ```
 
+#### 4.2.1. Collection Pagination
 
-#### 4.2.1. Items as full pages
+cliquedit can also generate a pagination component for your collections, and you do this by calling the method `paginate()` of the Collection Object and passing the `pageAlias` parameter when rendering the collection. This tells cliquedit to expect a GET parameter with the name of the passed `pageAlias` value, and to use this GET parameter to generate a proper pagination. 
+
+Required parameters:
+
+`count` - The number of items obtained by page.
+
+`adjacents` - The number of pages shown next to the current page in the pagination bar.
+
+`pageAlias` - The name of the GET parameter to expect when using pagination.
+
+#####Example
+
+```html+php
+<!-- This div will be our collection, so we mark it's beggining with the collection()->start() method -->
+<div class="some-paginated-list" <?php $cliqued->collection()->start('list') ?> >
+	
+	<!-- This collection requires pagination, so we pass the pageAlias parameter when rendering -->		
+	<?php $cliqued->collection->render([
+		'view' => 'views/components/list-element.php',
+		'allowAddition' => true,
+		'pageAlias' => 'page'
+	]) ?>
+	
+	<!-- And then we generate the pagination. We also need the name of the pageAlias here -->
+	<?php $cliqued->collection()->paginate( ['count' => 5, 'adjacents' => 2, 'pageAlias' => 'page' ] ) ?>
+
+</div>
+```
+
+You also need to specify that you will be using pagination for this collection when using the `load()` method of the Page Object.
+
+```php
+$cliqued->page()->load([
+	'page' => 20,
+	'collections' => 'list|%page%|5'
+]); 
+```
+
+This will generate a multiplicable collection named "list" with a working Bootstrap 4 pagination component.
+
+
+#### 4.2.2. Items as full pages
 You may want to show a more detailed view of each item in a Collection, in addition to the basic view previously shown. This is the case for blog articles, image galleries and landing pages.
 
 The `render()` method of the Collection object allows you to define the path to this full page view, which would normally be the path to a php file. This will enable you to insert a link in the "printed" items, and this link will take you to the full page view with the proper GET parameters. These parameters are the name of the collection and the id of the corresponding item. This is the same logic used in most implementations of a blog.
