@@ -528,16 +528,16 @@ Assuming the GET parameters of city = New_York and folio = 100, this method will
 
 Now you need to identify the beggining of the collection and the item in the `fullPagePath` file. This could be either the entire page, or just a smaller section of it.
 
-We do this by passing the `itemAsPage` parameter on the `collection()->start()` method. This tells cliqued that there will be a single article of the given collection inside this element, and this item will have access to the more detailed options such as the meta tags when editing.
+We do this by passing an array with the `itemAsPage` parameter set to true on the `collection()->start()` method. This tells cliqued that there will be a single article of the given collection inside this element, and this item will have access to the more detailed options such as the meta tags when editing.
 
 ```php
-$cliqued->collection()->start( name, 'itemAsPage' )
+$cliqued->collection()->start( name, [ 'itemAsPage' => true ] )
 ```
 
 As specified before, a collection by itself means nothing if there isn't an item inside of it. We need to define where in the page the item will start. We do this by using the `item()` method of the Collection object and manually passing the collection name and item id as parameters. 
 
 ```php
-$cliqued->collection()->item( collectionName, itemId ] )
+$cliqued->collection()->item( [ collectionName, itemId ] )
 ```
 
 
@@ -545,7 +545,7 @@ In this example we assume that the entire page is an item, allowing us to replic
 
 ```html+php
 <!-- Mark the beggining of this page, and in this case, of the collection -->
-<html <?php $cliqued->page()->start(); $cliqued->collection()->start( $_GET['city'], 'itemAsPage' ); ?> >
+<html <?php $cliqued->page()->start(); $cliqued->collection()->start( $_GET['city'], ['itemAsPage' => true] ); ?> >
 
 	<head>
 	</head>
