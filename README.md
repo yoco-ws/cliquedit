@@ -560,6 +560,8 @@ With this you can proceed to use cliqu**edit** as usual. Editable elements insid
 
 ### Supported platforms 
 
-(Todos los navegadores, excepto en la plataforma iOS )
+Firefox 62 and higher 
+Chrome 67 and higher
+Safari 11 and higher
 
-
+Chrome for Android 69 and higher
