@@ -84,7 +84,7 @@ Up until now every element that has been used needed an unique `name`. These ele
 
 #### 1.4. Dependencies 
 
-jQuery ___
+jQuery 3.2.1 or higher.
 
 #### 1.5. Base requirements
 
@@ -461,23 +461,23 @@ $cliqued->page()->load([
 ```
 
 
-#### 4.2.1. Single, Full View Items
+#### 4.2.1. Items as full pages
 You may want to show a more detailed view of each item in a Collection, in addition to the basic view previously shown. This is the case for blog articles, image galleries and landing pages.
 
-The `render()` method of the Collection object allows you to define the path to this detailed view, which would normally be the path to a php file. This will enable you to insert a link in the "printed" items, and this link will take you to the detailed view with the proper GET parameters. These parameters are the name of the collection and the id of the corresponding item. This is the same logic used in most implementations of a blog.
+The `render()` method of the Collection object allows you to define the path to this full page view, which would normally be the path to a php file. This will enable you to insert a link in the "printed" items, and this link will take you to the full page view with the proper GET parameters. These parameters are the name of the collection and the id of the corresponding item. This is the same logic used in most implementations of a blog.
 
-Therefore, we will first need to render the collection with the proper links and we do this by using the `render()` method of the Collection object with the `fullView` parameter:
+Therefore, we will first need to render the collection with the proper links and we do this by using the `render()` method of the Collection object with the `fullPagePath` parameter:
 
 ```html+php
 $cliqued->collection->render([
 	'view' => 'path/to/file',
 	'allowAddition' => true,
 	'count' => n,
-	'fullView' => 'path/to/full/view'
+	'fullPagePath' => 'path/to/full/view'
 ]) ?>
 ```
 
-Where `fullView` is a string that defines the path to a file that will be used when rendering the links of each item. Each item will have a unique link with it's proper id and collection as GET parameters. For example, if you pass the value "post.php" to this parameter, the rendered links would look like this `post.php?collection=collection_name&id=n` where `n` is the id of the automatically generated item.
+Where `fullPagePath` is a string that defines the path to a file that will be used when rendering the links of each item. Each item will have a unique link with it's proper id and collection as GET parameters. For example, if you pass the value "post.php" to this parameter, the rendered links would look like this `post.php?collection=collection_name&id=n` where `n` is the id of the automatically generated item.
 
 You can even customize the name of these GET parameters by passing the `itemAlias` and `collectionAlias` in the `render()` method, so if you call the method like this:
 
@@ -486,26 +486,26 @@ $cliqued->collection->render([
 	'view' => 'views/modules/document_preview.php',
 	'allowAddition' => true,
 	'count' => 10,
-	'fullView' => 'document.php',
+	'fullPagePath' => 'document.php',
 	'itemAlias' => 'folio',
 	'collectionAlias' => 'city'
 ]) ?>
 ```
 Assuming that this render methods corresponds to a collection named "New_York", when rendering the links it will result in `document.php?city=New_York&folio=120`.
 
-Lastly, you also need to specify where in your items you want to render these links. For this example we do this in the `views/modules/document_preview.php` since thats the file used to define the structure of each item.
+Lastly, you also need to specify where in your items you want to render these links using the `fullPagePath()` method of the Collection object. For this example, we do this in the `views/modules/document_preview.php` since thats the file used to define the structure of each item.
 
 **views/modules/document_preview.php**
 ```html+php
 <div class="document-preview" <?php $cliqued->collection()->item() ?> >
 	<img <?php $cliqued->image()->render('document-thumbnail', ['src' => 'img/resources/document-thumb.png']) ?> >
-	<a <?php $cliqued->collection()->fullViewPath() ?> > Read more </a> //This will print the proper url previously discussed
+	<a <?php $cliqued->collection()->fullPagePath() ?> > Read more </a> //This will print the proper url previously discussed
 </div>
 ```
 
 With this you would have created a multipliable collection of items, each with an automatically generated, working url.
 
-Next you will need to handle these GET parameters in your `fullView` file. The first thing you need to do is to ask `cliquedit` to request the given item and it's collection as a `Single Item`. A single article contains additional information such as the meta tags of this item and it's previous and next items.
+Next you will need to handle these GET parameters in your `fullPagePath` file. The first thing you need to do is to ask `cliquedit` to request the given item and it's collection as a `Single Item`. A single article contains additional information such as the meta tags of this item and it's previous and next items.
 
 We do this by passing the `|single` option for this collection in the load() method of the Page object.
 
@@ -519,13 +519,26 @@ $cliqued->page()->load([
 
 Assuming the GET parameters of city = New_York and folio = 100, this method will request the full information of the item with id 100 of the New_York collection.
 
-Now you need to identify the beggining of the collection and the item in the `fullView` file. This could be either the entire page, or just a smaller section of it.
+Now you need to identify the beggining of the collection and the item in the `fullPagePath` file. This could be either the entire page, or just a smaller section of it.
+
+We do this by passing the `itemAsPage` parameter on the `collection()->start()` method. This tells cliqued that there will be a single article of the given collection inside this element, and this item will have access to the more detailed options such as the meta tags when editing.
+
+```php
+$cliqued->collection()->start( name, 'itemAsPage' )
+```
+
+As specified before, a collection by itself means nothing if there isn't an item inside of it. We need to define where in the page the item will start. We do this by using the `item()` method of the Collection object and manually passing the collection name and item id as parameters. 
+
+```php
+$cliqued->collection()->item( collectionName, itemId ] )
+```
+
 
 In this example we assume that the entire page is an item, allowing us to replicate this "page" as different pages. In reality we are simply changing the information of the item and not of the page itself, and this information is obtained based on the GET parameters.
 
 ```html+php
 <!-- Mark the beggining of this page, and in this case, of the collection -->
-<html <?php $cliqued->page()->start(); $cliqued->collection()->start( $_GET['city'], 'fullView' ); ?> >
+<html <?php $cliqued->page()->start(); $cliqued->collection()->start( $_GET['city'], 'itemAsPage' ); ?> >
 
 	<head>
 	</head>
@@ -537,6 +550,9 @@ In this example we assume that the entire page is an item, allowing us to replic
 
 </html>
 ```
+
+With this you can proceed to use cliqu**edit** as usual. Editable elements inside of the 'item' will belong to the current item (indetified by the GET parameters), and editable items outside of this item will belong to the current page.
+
 
 
 ### Supported platforms 
