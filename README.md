@@ -5,46 +5,46 @@
 
 #### 1. What is cliquedit?
 
-1.1. [Licences](#licences)
+1.1. [Licences](#11-licences)
  
-1.2. [Benefits](#benefits)
+1.2. [Benefits](#12-benefits)
 
-1.3. [How it works](https://github.com/yoco-ws/cliquedit#13-how-it-works)
+1.3. [How it works](#13-how-it-works)
 
-1.4. [Dependencies](#dependencies)
+1.4. [Dependencies](#14-dependencies)
 
-1.5. [Base requirements](#base-requirements)
+1.5. [Base requirements](#15-base-requirements)
 
 #### 2. Getting started
 
-2.1. [Installation](#installation)
+2.1. [Installation](#21-installation)
 
-2.2. [Get started](#get-started)
+2.2. [Get started](#22-get-started)
 
-2.3. [How to use](#how-to-use)
+2.3. [How to use](#23-how-to-use)
 
 #### 3. Basic use
 
-3.1. [Text](#text)
+3.1. [Text](#31-text)
 
-3.2. [Image](#image)
+3.2. [Image](#32-image)
 
-3.3. [Link](#link)
+3.3. [Link](#33-link)
 
-3.4. [Audio](#audio)
+3.4. [Audio](#34-audio)
 
-3.5. [Video](#video)
+3.5. [Video](#35-video)
 
-3.6. [Embedded code](#embedded-code)
+3.6. [Embedded code](#36-embedded-code)
 
 
 #### 4. Advanced use
 
-4.1. [Composed elements](#composed-elements)
+4.1. [Composed elements](#41-composed-elements)
 
-4.2. [Collections and items](#collections-and-items)
+4.2. [Collections and items](#42-collections-and-items)
 
-4.3. [Items as full pages](#items-as-full-pages)
+4.3. [Items as full pages](#43-items-as-full-pages)
 
 [Supported platforms](#supported-platforms)
 
