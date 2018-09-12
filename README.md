@@ -74,7 +74,15 @@ cliquedit is highly friendly and intuitive for the final user.
 
 #### 1.3. How it works
 
-cliquedit replaces the attribute within the html tag being modified...
+The process of implementing cliqu**edit** is divided in 2 phases. In the first phase, the programmer needs to define which elements should be editable and which shouldn't, then they will use the proper cliquedit functions of each singleton Object corresponding to each type of element to **render** a specific structure that cliquedit can understand in the editing phase.
+When coding, most of these functions will replace existing HTML attributes. For example, in an `img` tag that is usually written as `<img src="somefile.png" alt="My file!" />`, since the `src` and `alt` attributes are what we want to make "editable", we replace them with the proper function of the `Image` object, which will render editable src and alt attributes.
+
+Each of these editable elements will require a name that must be unique among the elements of the same type and in the same page or item in a collection. This means that you can only define an element named 'title' when you use a Text element on a particular page, but you can use the same name on a different kind of element in the same page. cliqu**edit** works under the premise that every page that uses cliqu**edit** in your website has an unique ID, defined as an integer value.
+
+cliquedit identifies these elements with the given name, the type of element, and page/collection-item id. A text element named 'header' can be used in a page 1, 2, or in the first item of some collection and it's value will be different in each case.
+
+
+
 Each page has an unique numeric ID...
 Cliquedit takes the default values if the connection is lost...
 Each element has a unique name...
@@ -88,7 +96,7 @@ jQuery 3.2.1 or higher.
 
 #### 1.5. Base requirements
 
-PHP Server with CURL Modules enabled.
+PHP Server (5.6 or higher) with CURL Modules enabled.
 
 ### 2. Getting started
 
