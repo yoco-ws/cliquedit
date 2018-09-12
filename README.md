@@ -554,7 +554,7 @@ In this example we assume that the entire page is an item, allowing us to replic
 </html>
 ```
 
-With this you can proceed to use cliqu**edit** as usual. Editable elements inside of the 'item' will belong to the current item (indetified by the GET parameters), and editable items outside of this item will belong to the current page.
+With this you can proceed to use cliqu**edit** as usual. Editable elements inside of the 'item' will belong to the current item (identified by the GET parameters), and editable items outside of this item will belong to the current page.
 
 
 
