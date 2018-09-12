@@ -147,9 +147,16 @@ Optional parameters
 
 `collections` - A comma-separated string specifying which collections you will be using in the page. Optionally, you can use a pipe to indicate the number of items to request for each collection. This is the structure:
 
-`[collection-name(|n)?,]+` 
+`[collection-name( \|[n|%page%|single] )?,]+` 
 
-where `collection-name` is the name of the collection and `n` is the number of items to request.
+where 
+`collection-name` is the name of the collection.
+
+`n` is the number of items to request.
+
+`%page%` is the name of the GET parameter used for pagination, ignoring the '%' symbols.
+
+`single` indicates that only one item is required. Used for full page items.
 
 ```php
 //This will load the first 10 items of the collection named 'carousel', the whole 'list' collection and 20 items of the 'gallery' collection; as well as the content of page number 6.
@@ -429,6 +436,10 @@ Optional parameters.
 
 `count` - An integer used to determine how many items will be "printed" with the render method. cliquedit gets the items and stores them as a stack, and everytime the render method displays an item, it will pop it out of the stack. This means that if you have 10 items and pass a parameter of `count => 7`, there will be 3 more items left in the stack. This is useful because you can pass print the first 7 elements with a particular view, and the next 3 with a different view, somewhere else in the same page. If not specified, this method prints every item in the stack.
 
+`fullPagePath` - The path to the file that will be used when rendering links of each item. These rendered links are created with the `fullPagePath()` method of the Collection object.
+
+`pageAlias` - The name of the GET parameter used for the pagination of this collection.
+
 
 #####Example
 
@@ -452,6 +463,29 @@ Optional parameters.
 </div>
 ```
 This will create a Collection named `carousel` with multiplicable items, where the HTML of each item is defined in a carousel-slide.php file. You can call this collection and it's items anywhere, and you can even pass a different view if you needed.
+
+cliquedit can also generate a pagination component for your collections, and you do this by calling the method `paginate()` of the Collection Object and passing the `pageAlias` parameter when rendering the collection. This tells cliquedit to expect a GET parameter with the name of the passed `pageAlias` value, and to use this GET parameter to generate a proper pagination. 
+
+#####Example
+
+```html+php
+<!-- This div will be our collection, so we mark it's beggining with the collection()->start() method -->
+<div class="some-paginated-list" <?php $cliqued->collection()->start('carousel') ?> >
+	<!-- This collection requires pagination, so we pass the pageAlias parameter when rendering -->		
+	<?php $cliqued->collection->render([
+		'view' => 'views/components/list-element.php',
+		'allowAddition' => true,
+		'pageAlias' => 'page'
+	]) ?>
+	
+	<!-- And then we generate the pagination -->
+	<?php $cliqued->collection()->paginate( ['count' => 5, 'adjacents' => 2, 'pageAlias' => 'page' ] ) ?>
+
+</div>
+```
+
+You also need to specify that you will be using pagination for this collection when using the `load()` method of the Page Object.
+
 
 It's important to note that when using collections you must specify `cliquedit` which collections you will be using, so that it can load the requested information when making the API call.
 
