@@ -19,7 +19,7 @@
   <body>
 
   	<nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0">
-	  	<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img class="col-12" src="http://cliqued.it/img/cliqued.png" /></a></a>
+	  	<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img class="col-12" src="http://cliqued.it/website/img/cliqued-it.png" /></a></a>
 	</nav>
     
     <div class="container login-form">
