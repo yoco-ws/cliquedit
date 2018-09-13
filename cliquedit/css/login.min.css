@@ -1,0 +1,149 @@
+/*body,html{height:100%;width:100%;margin:0;padding:0;font-size:8px;overflow-x:hidden;-webkit-overflow-scrolling:touch}@media (max-width: 767px){.formulario{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}input[type="password"],input[type="text"]{margin-bottom:25px}}.capa-opaca{height:100%;width:100%;background:rgba(128,128,128,0.5);position:absolute;left:0;top:0;z-index:0}.contenedor{height:100%;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.fila{text-align:center}.contenedor-formulario{z-index:1}input:focus,input:active,input:hover{outline:none}input[type="text"],input[type="password"],input[type="submit"],.texto-login{color:white;font-size:25px;padding:5px;font-family:'Montserrat', sans-serif}input[type="text"],input[type="password"],input[type="submit"]{background:transparent}input[type="text"],input[type="password"]{border:0px;border-bottom:solid white 3px}input[type="submit"]{border:solid white 3px}label{text-align:left}.texto-login{text-decoration:none}a:hover{text-decoration:underline}.formulario{display:-webkit-box;display:-ms-flexbox;display:flex}.elemento-formulario{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;margin:0px 15px}
+
+.contenedor-inputs {
+    border: 3px solid #f99d41;
+    padding-bottom: 0%;
+    margin-bottom: 15%;
+}
+
+.formulario {
+    flex-direction: column;
+}
+
+div.capa-opaca{
+	background: #FFE3B6;
+}
+
+input[type="text"], input[type="password"], .texto-login {
+    color: gray;
+    font-size: 25px  !important;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+input[type="text"] {
+    border-bottom: solid #f99d41 3px;
+}
+
+input[type="password"] {
+    border-bottom: 0;
+}
+
+input[type="submit"]:hover, div.boton:hover {
+    cursor: pointer;
+    cursor: hand;
+}
+
+input[type="submit"], div.boton{
+    border: solid #f99d41 3px;
+    background: #f99d41;
+}
+
+div.boton p{
+    color: white !important;
+}
+
+.mt-5{
+    margin-top: 5rem;
+}*/
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 8px;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; }
+
+@media screen and (min-width: 1024px) {
+  body, html {
+    font-size: 10px; }
+}
+
+html *, body * {
+    font-size: 1.5rem;
+    font-family: helvetica;
+}
+
+b{
+    font-size: inherit;
+}
+
+
+
+.navbar {
+    background-color: #192C55;
+}
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+}
+
+
+div.login-form .title {
+    font-family: helvetica;
+    color: #192C55;
+    font-size: 4rem;
+}
+
+div.login-form label {
+    color: #192C55;
+    font-family:  helvetica;
+    font-size: 1.6rem;
+}
+
+div.login-form input {
+    color: #192C55;
+    font-family: helvetica;
+    font-size: 1.6rem;
+    border-radius:  0;
+    border: 1px solid #192C55;
+    padding-top:  0.9rem;
+    padding-bottom: 0.9rem;
+    height: auto;
+}
+
+div.login-form button, div.login-form a.btn {
+    font-size: 2.5rem;
+    font-family: helvetica;
+    font-weight: 700;
+    border-radius: 0;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    background-color: #192C55;
+    border: none;
+    color: white;
+}
+
+div.login-form a.btn {
+    background-color: #2699FB;
+}
+
+div.login-form form, div.login-form .contenedor-boton {
+    margin-top: 7rem;
+}
+
+div.login-form p {
+    font-family:  helvetica;
+    color: #192C55;
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+div.login-form a {
+    color: #192C55;
+    font-size: inherit;
+}
+
+.espaciado {
+    margin-top: 10rem;
+}
+
+/*# sourceMappingURL=login.min.css.map */
