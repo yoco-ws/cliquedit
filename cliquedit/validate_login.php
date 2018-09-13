@@ -9,7 +9,7 @@ try{
 	if(!isset($config['api_key'])) throw new Exception("No se definió la API Key en el config.ini");
 	
 	$api_key = $config['api_key'];
-	$requesturl = "https://yoco.ws/clic-edita/src/server/login_handler.php?api_key=".$api_key."&domain=".$_SERVER['HTTP_HOST']."&username=".$_POST['username']."&password=".$_POST['password'];
+	$requesturl = "https://yoco.ws/clic-edita/src/server/login_handler.php?api_key=".$api_key."&domain=".removeSubdomainUrl($_SERVER['HTTP_HOST'])."&username=".$_POST['username']."&password=".$_POST['password'];
 
 	$content = file_get_contents_curl($requesturl);
 
@@ -26,6 +26,26 @@ try{
 	}
 }catch(Exception $e){
 	echo '<p>Error: ', $e->getMessage(), '</p>';
+}
+
+function removeSubdomainUrl($url) {
+    //Fuente: https://stackoverflow.com/questions/2679618/get-domain-name-not-subdomain-in-php
+    $url_new = parse_url($url);
+    if(isset($url_new['path'])){
+        if (strcmp($url_new['path'], 'localhost') == 0 ) {
+            return $url_new['path'];
+        }
+    }
+
+    if(isset($url_new['host'])){
+        if (filter_var($url_new['host'], FILTER_VALIDATE_IP) || strcmp($url_new['host'], 'localhost') == 0 ) {
+            return $url_new['host'].':'.$url_new['port'];
+        }   
+    }else{
+        $array = explode(".", $url);
+        return (array_key_exists(count($array) - 2, $array) ? $array[count($array) - 2] : "").".".$array[count($array) - 1];
+    
+    }   
 }
 
 function file_get_contents_curl($url) {
