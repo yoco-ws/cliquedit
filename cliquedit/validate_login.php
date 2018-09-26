@@ -48,7 +48,7 @@ function removeSubdomainUrl($url) {
     }   
 }
 
-private function removeSubdomainUrlAlternative($url) {
+function removeSubdomainUrlAlternative($url) {
         
     if (strpos($url, 'localhost') !== false) {
         return 'localhost';
