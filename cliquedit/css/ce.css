@@ -299,7 +299,7 @@ div.medium-editor-toolbar ul button {
 [data-ce-richtext] span,
 [data-ce-richtext] div,
 [data-ce-richtext] b,
-[data-ce-richtext] strong,
+[data-ce-richtext] strong
  {
     color: inherit !important;
     font-family: inherit !important;
