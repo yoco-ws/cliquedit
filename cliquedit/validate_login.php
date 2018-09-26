@@ -9,7 +9,7 @@ try{
 	if(!isset($config['api_key'])) throw new Exception("No se definió la API Key en el config.ini");
 	
 	$api_key = $config['api_key'];
-	$requesturl = "https://yoco.ws/clic-edita/src/server/login_handler.php?api_key=".$api_key."&domain=".removeSubdomainUrl($_SERVER['HTTP_HOST'])."&username=".$_POST['username']."&password=".$_POST['password'];
+	$requesturl = "https://yoco.ws/clic-edita/src/server/login_handler.php?api_key=".$api_key."&domain=".removeSubdomainUrlAlternative($_SERVER['HTTP_HOST'])."&username=".$_POST['username']."&password=".$_POST['password'];
 
 	$content = file_get_contents_curl($requesturl);
 
@@ -46,6 +46,15 @@ function removeSubdomainUrl($url) {
         return (array_key_exists(count($array) - 2, $array) ? $array[count($array) - 2] : "").".".$array[count($array) - 1];
     
     }   
+}
+
+function removeSubdomainUrlAlternative($url) {
+        
+    if (strpos($url, 'localhost') !== false) {
+        return 'localhost';
+    }else{
+        return $url;
+    }
 }
 
 function file_get_contents_curl($url) {

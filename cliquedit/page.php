@@ -25,7 +25,7 @@ class page{
 		if(!isset($pageSpec['page'])) $pageSpec['page'] = 1;
 		
 		self::$id = $pageSpec['page'];
-		$parsedUrl = \CE\page::removeSubdomainUrl($_SERVER['HTTP_HOST']);
+		$parsedUrl = \CE\page::removeSubdomainUrlAlternative($_SERVER['HTTP_HOST']);
 		$requesturl = "https://yoco.ws/clic-edita/src/server/recovery_handler.php?api_key=".\CE\session::getKey()."&domain=".$parsedUrl;
 		if(isset($pageSpec['page'])) $requesturl.= "&page=".$pageSpec['page'];
 		if(isset($pageSpec['collections'])){
@@ -138,6 +138,15 @@ class page{
 			return (array_key_exists(count($array) - 2, $array) ? $array[count($array) - 2] : "").".".$array[count($array) - 1];
 		
 		}	
+	}
+
+	private function removeSubdomainUrlAlternative($url) {
+	    
+	    if (strpos($url, 'localhost') !== false) {
+		    return 'localhost';
+		}else{
+			return $url;
+		}
 	}
 
 

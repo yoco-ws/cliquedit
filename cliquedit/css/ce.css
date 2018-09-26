@@ -288,7 +288,19 @@ div.medium-editor-toolbar ul button {
     font-family: helvetica;
 }
 
-[data-ce-richtext] * {
+[data-ce-richtext] p,
+[data-ce-richtext] h1,
+[data-ce-richtext] h2,
+[data-ce-richtext] h3,
+[data-ce-richtext] h4,
+[data-ce-richtext] h5,
+[data-ce-richtext] h6,
+[data-ce-richtext] a,
+[data-ce-richtext] span,
+[data-ce-richtext] div,
+[data-ce-richtext] b,
+[data-ce-richtext] strong
+ {
     color: inherit !important;
     font-family: inherit !important;
     font-size: inherit !important;
