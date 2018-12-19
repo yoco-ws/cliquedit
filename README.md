@@ -414,7 +414,12 @@ In order to use cliquedit collections you must first define where in your code t
 
 The render() method of the Collection will require a `view` in which you will define the structure of your items.
 
+**IMPORTANT:** The scope of the variables will be out of reach within this view "template", including the reference to the singleton cliqu**edit** object, meaning that you will have to define these variables.
+
 ```html+php
+
+<?php $cliqued = \CE\CliquedIt::getInstance();  ?>
+
 <div <?php $cliqued->collection()->start('name') ?> >
 			
 	<?php $cliqued->collection->render([
@@ -457,6 +462,8 @@ Optional parameters.
 
 **views/componentes/carousel-slide.php**
 ```html+php
+<?php $cliqued = \CE\CliquedIt::getInstance();  ?>
+
 <!-- We mark the beggining of this item -->
 <div class="slide" data-carousel <?php $cliqued->collection()->item() ?> >
 	<img <?php $cliqued->image()->render('banner', ['src' => 'img/resources/banner.png']) ?> >
