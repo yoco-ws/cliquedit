@@ -418,8 +418,6 @@ The render() method of the Collection will require a `view` in which you will de
 
 ```html+php
 
-<?php $cliqued = \CE\CliquedIt::getInstance();  ?>
-
 <div <?php $cliqued->collection()->start('name') ?> >
 			
 	<?php $cliqued->collection->render([
