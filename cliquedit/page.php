@@ -60,7 +60,7 @@ class page{
 			if(isset($pageMetas)){
 				if (isset($pageMetas['sharing_keywords'])) echo '<meta name="keywords" content="'.strip_tags($pageMetas['sharing_keywords']).'"/>';
 				if (isset($pageMetas['sharing_titulo'])) echo '<meta property="og:title" content="'.strip_tags($pageMetas['sharing_titulo']).'"/>';
-				if (isset($pageMetas['sharing_descripcion'])) echo '<meta name="description" value="'.strip_tags($pageMetas['sharing_descripcion']).'"><meta property="og:description" content="'.strip_tags($pageMetas['sharing_descripcion']).'"/>';
+				if (isset($pageMetas['sharing_descripcion'])) echo '<meta name="description" content="'.strip_tags($pageMetas['sharing_descripcion']).'"><meta property="og:description" content="'.strip_tags($pageMetas['sharing_descripcion']).'"/>';
 				if (isset($pageMetas['sharing_imagen'])) echo '<meta property="og:image" content="'.$pageMetas['sharing_imagen'].'"/>';
 			}
 				
